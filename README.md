@@ -1,2 +1,2 @@
 # HRTF_individualization-
-HRTF individualization based on Principal Component Analysis (PCA) and neural network using Matlab
+HRTF individualization - REFERENCE: Personalized HRTF Modeling Based on Deep Neural Network Using Anthropometric Measurements and Images of the Ear

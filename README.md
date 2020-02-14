@@ -12,6 +12,8 @@ PCA_CIPIC_ARI_ITA.m        - Performs principal component analysis over the stru
 
 
 
+NeuralNet_CIPIC.m          - Train shallow neural network with anthropometric data as input features and principal components as targets.                              (for the CIPIC dataset only).
 
 
+NeuralNet_CIPIC_ARI_ITA.m  - Train shallow neural network with anthropometric data as input features and principal components as targets.                              (for the CIPIC, ARI and ITA dataset together).
 

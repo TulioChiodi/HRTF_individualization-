@@ -1,6 +1,6 @@
 # Synthesis of individualized HRTF with neural networks
 
-The main idea of the project is to synthesise individualized HRTFs from anthropometric measurements, with the use initially of shallow neural networks and later experiments with deep networks will be performed.
+The main idea of the project is to synthesise individualized HRTFs from anthropometric measurements, with the use initially of shallow neural networks, and later experiments with deeper networks will be performed.
 Here we use three main databases to expand training data, the CIPIC, ARI and ITA databases (http://sofacoustics.org/data/database/).
 
 

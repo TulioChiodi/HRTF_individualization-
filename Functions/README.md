@@ -1,3 +1,4 @@
+# DOCUMENTAÇÃO PT-BR
 # Funções auxiliares à sinteze de HRTF individualizadas
 Maior parte das funções são de autoria própria, mas algumas delas são de diversos autores, 
 os devidos créditos são dados em cada algoritmo. 

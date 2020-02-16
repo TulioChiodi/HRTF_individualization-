@@ -15,7 +15,7 @@ Realiza a transformação de hrtfs do banco de dados ARI em seu formato de padro
 Conversão de coordenadas horizontais polares para geodésicas.
 
 
-### hro2sph.m
+### hor2sph.m
 Conversão de coordenadas horizontais polares para esférica.
 
 

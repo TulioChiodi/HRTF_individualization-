@@ -1,27 +1,27 @@
 function Obj_out = sofaFit2Grid(Obj_in, out_pos, varargin)
-% Converte posiÁıes de HRIRs SOFA ‡s posiÁıes especificadas em 'out_pos'
+% Converte posi√ß√µes de HRIRs SOFA √†s posi√ß√µes especificadas em 'out_pos'
 % Davi R. Carvalho @UFSM - Engenharia Acustica - fevereiro/2020
 
 %   Input Parameters:
-%    Obj_in:     Objeto de HRTFs SOFA com coordenadas esfÈricas 
-%                azi:    0∞ -> 360∞     
-%                elev: -90∞ -> 90∞ 
-%                (com o ˙ltimo update, talvez funcione com outros sistemas de coordenadas)
-%    out_pos:    Nx3 matrix de posiÁıes desejadas, em que N corresponde ao 
-%                n˙mero total de posiÁıes, e as colunas correspondem a azimute,
-%                elevaÁ„o e raio respectivamente 
+%    Obj_in:     Objeto de HRTFs SOFA com coordenadas esf√©ricas 
+%                azi:    0¬∞ -> 360¬∞     
+%                elev: -90¬∞ -> 90¬∞ 
+%                (com o √∫ltimo update, talvez funcione com outros sistemas de coordenadas)
+%    out_pos:    Nx3 matrix de posi√ß√µes desejadas, em que N corresponde ao 
+%                n√∫mero total de posi√ß√µes, e as colunas correspondem a azimute,
+%                eleva√ß√£o e raio respectivamente 
 
 %   Output Parameters:
-%     Obj_out:   Objeto de HRTFs SOFA com as caracterÌstica 
-%                de mediÁ„o do dataset CIPIC
+%     Obj_out:   Objeto de HRTFs SOFA com as caracter√≠stica 
+%                de medi√ß√£o do dataset CIPIC
 
 %   'fit_2_CIPIC_grid.m' aceita os seguintes parametros opcionais:
 %     
 %    'move':     Seleciona as posicoes mais proximas do grid objetivo e
-%                forÁa a assumirem suas coordenadas (metodo Default).
+%                for√ßa a assumirem suas coordenadas (metodo Default).
 %    'interp':   Interpola as posicoes de interesse com a funcao interna 
 %                'interpolateHRTF', necessaria Audio Toolbox.
-%    'Fs':       Taxa de amostragem no objeto e saÌda (Default: 44100).
+%    'Fs':       Taxa de amostragem no objeto de sa√≠da (Default: 44100).
 %
 % Matlab R2019a
 %% Parse Arguments
@@ -59,14 +59,14 @@ switch p.Results.method
             % Find nearest position of CIPIC data in the INPUT grid (Obj.SourcePosition)
             tsqr = sqrt((meta.pos(:,1)-out_pos(zz,1)).^2 + (meta.pos(:,2)-out_pos(zz,2)).^2);
             [~,idx(zz)] = min(tsqr); 
-            % 'È possivel que uma mesma posicao no grid original seja escolhida 
+            % '√© possivel que uma mesma posicao no grid original seja escolhida 
             %para mais de uma posicao no grid referencia'
 
-            % Posicoes selecionadas no grid original (util para visualizaÁ„o)
+            % Posicoes selecionadas no grid original (util para visualiza√ß√£o)
         %     meta.fittedPOS(zz,:) = Obj_in.SourcePosition(idx(zz),:);
         end
-        % Assumindo posiÁ„o no grid objetivo
-        % (caso for visualizar as posiÁıes selecionadas, comentar a linha abaixo)
+        % Assumindo posi√ß√£o no grid objetivo
+        % (caso for visualizar as posi√ß√µes selecionadas, comentar a linha abaixo)
         meta.fittedPOS = out_pos;
         meta.fittedIR  = Obj_in.Data.IR(idx, :, :);
 

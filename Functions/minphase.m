@@ -1,6 +1,6 @@
 function [hminL, hminR] = minphase(hL, hR, itd, azi)
 % Calcula a fase mínima a partir da magnitude apenas
-% Aplica a fase de excesso (ITD) sobre a RI 
+% Aplica a fase de excesso (ITD) sobre a RI [ITA TOOLBOX]
 
 %%% INPUT %%%%
 % hL, hR: magnitudes para orelha esquerda e direita (não espelhada e linear)

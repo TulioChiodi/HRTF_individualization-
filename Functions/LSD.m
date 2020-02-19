@@ -13,7 +13,6 @@ hrtf_sim  = (hrtf_sim(1:k2));
 
 %%%% LSD %%%%
 soma = sum((20*log10(hrtf_msrd./hrtf_sim)).^2);
-% soma = sum((hrtf_msrd(1:k2) - hrtf_sim(1:k2)).^2);
 lsd = abs(sqrt(soma/(k2 - k1 + 1)));
 
 % %PLOT

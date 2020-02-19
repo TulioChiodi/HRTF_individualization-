@@ -4,19 +4,20 @@ function [IR_minL, IR_minR] = phase_job(hL, hR, itd, azi)
 % itd: diferença iteraural de tempo (opcional)
 % azi: azimute referente ao determinado itd (opcional)
 N = length(hL);
-half_hL = hL(1:N);
-half_hR = hR(1:N);
 
 %% Window spectrum 
-retwin = ones(N*0.6, 1); 
-hanwin = hanning((2*N)*0.4); % 10% de decaimento
-win = [retwin; 
-       hanwin(length(hanwin)/2:end-1)];
-hL = half_hL.*win;
-hR = half_hR.*win;
+% half_hL = hL(1:N);
+% half_hR = hR(1:N);
+% flatwin = ones(N*0.6, 1); 
+% hanwin = hanning((2*N)*0.4); % 10% de decaimento
+% win = [flatwin; 
+%        hanwin(length(hanwin)/2:end-1)];
+% hL = half_hL.*win;
+% hR = half_hR.*win;
 
-                %%% PHASE RECONSTRUCTION %%%
+                %%% PHASE RECONSTRUCTION %%%             
 %% Minimum Phase 
+% Calculo da fase
 phi_minL = imag(hilbert(-log(abs(hL))));
 phi_minR = imag(hilbert(-log(abs(hR)))); 
 % HRTF complexa
@@ -34,17 +35,17 @@ if nargin <= 2
     azi = 1;
 end
 
-offset = 10; 
+offset = 23;
 if azi >= 0 
     IR_minL = circshift(IR_minL, round(itd+offset));
-    IR_minL(1:round(itd+offset)) = 0;
+%     IR_minL(1:round(itd+offset)) = 0;
     IR_minR = circshift(IR_minR, offset);
-    IR_minR(1:offset) = 0;
+%     IR_minR(1:offset) = 0;
 else
     IR_minL = circshift(IR_minL, offset);
-    IR_minL(1:offset) = 0;
+%     IR_minL(1:offset) = 0;
     IR_minR = circshift(IR_minR, round(itd+offset));
-    IR_minR(1:round(itd+offset)) = 0;
+%     IR_minR(1:round(itd+offset)) = 0;
 end
 
 

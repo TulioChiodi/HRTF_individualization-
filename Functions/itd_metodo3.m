@@ -2,15 +2,17 @@ function [itd, naz, nel] = itd_metodo3(wid, dep)
 %%% Metodo 3 : ITD 
 % Modelo geométrico que simplifica a cabeça a uma esfera 
 
-%wid = distancia entre as duas orelhas;
+%%%%%% INPUT %%%%%%
+% wid = distancia entre as duas orelhas;
 % len = distancia entre face e nuca;
 
 % REFERENCIA: Estimation of a Spherical-Head Model from Anthropometry 
-
+%              (Algazi)
 % raio da esfera determinado a partir de uma soma ponderada das dimensões da cabeça 
 % os pesos foram determinados a partir de uma regressão sobre dados de
 % varios indivíduos
 
+%% Posicoes
 % Azimutes
 naz = [-80, -65, -55 -45:5:45, 55, 65, 80]; 
 % Elevações

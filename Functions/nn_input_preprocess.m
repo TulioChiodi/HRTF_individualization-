@@ -4,10 +4,10 @@ function [xinpt, sig, mu] = nn_input_preprocess(InptMtx, sig, mu)
 % features entre indivíduos 
 
 %%% REFERENCIA %%% 
-%Deep Neural Network Based HRTF Personalization Using
-%Anthropometric Measurements
+% Deep Neural Network Based HRTF Personalization Using
+% Anthropometric Measurements
 if nargin < 2  
-    sig = std(InptMtx, 0, 2); %desvio padrão para cada parâmetro de entrada entre indivíduos
+    sig = std(InptMtx, 0, 2); %desvio padrão para cada PARAMETRO de entrada entre indivíduos
     mu  = mean(InptMtx, 2);   %média de cada parâmetro
 end
 

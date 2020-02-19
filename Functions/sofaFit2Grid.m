@@ -15,7 +15,7 @@ function Obj_out = sofaFit2Grid(Obj_in, out_pos, varargin)
 %     Obj_out:   Objeto de HRTFs SOFA com as característica 
 %                de medição do dataset CIPIC
 
-%   'fit_2_CIPIC_grid.m' aceita os seguintes parametros opcionais:
+%   'sofaFit2Grid.m' aceita os seguintes parametros opcionais:
 %     
 %    'move':     Seleciona as posicoes mais proximas do grid objetivo e
 %                força a assumirem suas coordenadas (metodo Default).
